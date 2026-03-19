@@ -7,8 +7,6 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Georgia', serif; background: #0d0d0d; color: #e8e0d0; line-height: 1.75; font-size: 17px; }
-
-    /* HERO */
     .hero { position: relative; background: linear-gradient(160deg, #1a0000 0%, #0d0d0d 60%); border-bottom: 2px solid #8b0000; padding: 80px 24px 60px; text-align: center; overflow: hidden; }
     .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(139,0,0,0.25) 0%, transparent 70%); }
     .hero-eyebrow { position: relative; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: #cc3333; margin-bottom: 18px; }
@@ -16,369 +14,213 @@
     .hero h1 span { color: #ff4444; }
     .hero-sub { position: relative; font-size: 18px; color: #aaa; max-width: 680px; margin: 0 auto 36px; font-style: italic; }
     .hero-meta { position: relative; display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: #666; }
-
-    /* STAT BAR */
     .stat-bar { background: #8b0000; }
     .stat-bar-inner { display: flex; flex-wrap: wrap; }
     .stat-item { flex: 1 1 180px; padding: 20px 28px; border-right: 1px solid rgba(255,255,255,0.15); text-align: center; }
     .stat-item:last-child { border-right: none; }
     .stat-number { display: block; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 28px; font-weight: 800; color: #fff; line-height: 1; }
     .stat-label { display: block; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-top: 5px; }
-
-    /* LAYOUT */
     .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
-
-    /* EXEC SUMMARY */
     .exec-summary { background: #111; border-left: 4px solid #8b0000; padding: 36px 40px; margin: 48px 0; border-radius: 0 4px 4px 0; }
     .exec-summary h2 { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #cc3333; margin-bottom: 16px; }
     .exec-summary p { font-size: 18px; color: #ddd; line-height: 1.8; }
-
-    /* SECTIONS */
     .section { margin: 56px 0; }
     .section-label { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #cc3333; margin-bottom: 10px; }
     .section h2 { font-size: 30px; font-weight: 700; color: #fff; margin-bottom: 24px; line-height: 1.2; border-bottom: 1px solid #222; padding-bottom: 16px; }
     .section p { color: #ccc; margin-bottom: 20px; }
-
-    /* PULL QUOTE */
     .pull-quote { border-left: 3px solid #ff4444; padding: 16px 24px; margin: 32px 0; background: rgba(139,0,0,0.12); border-radius: 0 4px 4px 0; }
     .pull-quote p { font-size: 20px !important; color: #f0c0c0 !important; font-style: italic; margin: 0 !important; line-height: 1.5; }
     .pull-quote cite { display: block; font-size: 12px; font-family: 'Helvetica Neue', Arial, sans-serif; letter-spacing: 1px; text-transform: uppercase; color: #cc3333; margin-top: 10px; font-style: normal; }
-
-    /* HIGHLIGHT BOX */
     .highlight-box { background: linear-gradient(135deg, #1a0a00, #150000); border: 1px solid #8b0000; border-radius: 6px; padding: 28px 32px; margin: 32px 0; }
     .highlight-box h3 { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #ff6666; margin-bottom: 14px; }
     .highlight-box ul { list-style: none; padding: 0; }
     .highlight-box ul li { padding: 7px 0 7px 20px; position: relative; color: #ddd; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 15px; }
     .highlight-box ul li:last-child { border-bottom: none; }
     .highlight-box ul li::before { content: '»'; position: absolute; left: 0; color: #cc3333; }
-
-    /* WARNING BOX */
     .warning-box { background: rgba(80,40,0,0.4); border: 1px solid #cc6600; border-radius: 6px; padding: 24px 28px; margin: 32px 0; }
     .warning-box h3 { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #ff9900; margin-bottom: 10px; }
     .warning-box p { color: #e8c880; font-size: 15px; margin: 0; }
-
-    /* STAT GRID */
     .stat-grid { display: flex; flex-wrap: wrap; gap: 16px; margin: 28px 0; }
     .stat-card { flex: 1 1 160px; background: #111; border: 1px solid #2a2a2a; border-radius: 6px; padding: 20px; text-align: center; }
     .stat-card .big { display: block; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 30px; font-weight: 800; color: #ff4444; }
     .stat-card .label { display: block; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #888; margin-top: 6px; }
-
-    /* INLINE HIGHLIGHT */
     .hl { background: rgba(139,0,0,0.3); color: #ff9999; padding: 1px 5px; border-radius: 3px; font-weight: 600; }
     .hl-gold { background: rgba(120,80,0,0.3); color: #ffcc66; padding: 1px 5px; border-radius: 3px; font-weight: 600; }
-
-    /* FIGURE */
     .report-image { margin: 28px 0; }
     .report-image img { width: 100%; border-radius: 6px; border: 1px solid #222; }
     .report-image figcaption { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; color: #666; margin-top: 8px; font-style: italic; }
-
-    /* CHART WRAPPER */
     .chart-wrapper { background: #111; border: 1px solid #222; border-radius: 6px; padding: 28px 24px; margin: 32px 0; }
     .chart-wrapper h3 { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #888; margin-bottom: 20px; }
-
-    /* TIMELINE */
     .timeline { margin: 32px 0; }
     .tl-item { display: flex; gap: 20px; margin-bottom: 20px; }
     .tl-dot { flex-shrink: 0; width: 12px; height: 12px; border-radius: 50%; background: #8b0000; margin-top: 7px; }
     .tl-content { flex: 1; background: #111; border-radius: 4px; padding: 16px 20px; }
     .tl-date { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #cc3333; margin-bottom: 6px; }
     .tl-content p { color: #ccc; font-size: 15px; margin: 0; }
-
-    /* REFERENCES */
     .references { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 48px 0; margin-top: 64px; }
     .references h2 { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #666; margin-bottom: 24px; }
     .ref-list { list-style: none; padding: 0; }
     .ref-list li { font-size: 13px; color: #555; padding: 6px 0; border-bottom: 1px solid #1a1a1a; }
     .ref-list li:last-child { border-bottom: none; }
     .ref-list a { color: #884444; text-decoration: none; }
-    .ref-list a:hover { color: #cc6666; text-decoration: underline; }
-
     footer { text-align: center; padding: 24px; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #333; border-top: 1px solid #1a1a1a; }
   </style>
 </head>
 <body>
-
-<!-- HERO -->
 <div class="hero">
   <div class="hero-eyebrow">Intelligence Report &mdash; March 2026</div>
   <h1>The <span>Cascading Crisis:</span> Oil, Fertilizer &amp; the Collapse of the Corn Chain</h1>
   <p class="hero-sub">How a chokepoint in the Persian Gulf is threatening the global food system, and what happens when the world's most essential crop stops growing</p>
-  <div class="hero-meta">
-    <span>14 Primary Sources</span>
-    <span>March 18, 2026</span>
-    <span>Signal Over Noise AI</span>
-  </div>
+  <div class="hero-meta"><span>18 Sources</span><span>March 19, 2026</span><span>Signal Over Noise AI</span></div>
 </div>
-
-<!-- STAT BAR -->
-<div class="stat-bar">
-  <div class="stat-bar-inner">
-    <div class="stat-item">
-      <span class="stat-number">~20%</span>
-      <span class="stat-label">Global oil through Hormuz</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number">~33%</span>
-      <span class="stat-label">World fertilizer trade blocked</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number">+32%</span>
-      <span class="stat-label">Urea price spike in one week</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number">3.2B</span>
-      <span class="stat-label">People dependent on N-fertilizer</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number">$105+</span>
-      <span class="stat-label">Brent crude per barrel (Mar 15)</span>
-    </div>
-  </div>
-</div>
-
-<!-- BODY -->
+<div class="stat-bar"><div class="stat-bar-inner">
+  <div class="stat-item"><span class="stat-number">~20%</span><span class="stat-label">Global oil through Hormuz</span></div>
+  <div class="stat-item"><span class="stat-number">~33%</span><span class="stat-label">World fertilizer trade blocked</span></div>
+  <div class="stat-item"><span class="stat-number">+32%</span><span class="stat-label">Urea price spike in one week</span></div>
+  <div class="stat-item"><span class="stat-number">3.2B</span><span class="stat-label">People dependent on N-fertilizer</span></div>
+  <div class="stat-item"><span class="stat-number">$105+</span><span class="stat-label">Brent crude per barrel (Mar 15)</span></div>
+</div></div>
 <div class="container">
-
-  <!-- EXEC SUMMARY -->
   <div class="exec-summary">
     <h2>Executive Summary</h2>
-    <p>The February 28, 2026 U.S.-Israeli strikes on Iran and the subsequent closure of the Strait of Hormuz have triggered a <span class="hl">polycrisis</span> that connects energy markets, fertilizer supply chains, and global food security in ways that are only now becoming clear. Oil prices have surged past <span class="hl">$105 per barrel</span>, but the bigger long-term threat is the stranglehold on <span class="hl-gold">fertilizer flows</span> arriving right as the Northern Hemisphere's spring planting season begins. Nearly a third of globally traded nitrogen fertilizer and roughly half of seaborne sulfur exports normally transit the Strait. Urea prices jumped <span class="hl">32% in a single week</span>. If this disruption extends through April, the cascading consequence falls hardest on corn -- the crop underpinning the entire modern food, fuel, and livestock system. When corn falters, almost everything else does too.</p>
+    <p>The February 28, 2026 U.S.-Israeli strikes on Iran and the subsequent closure of the Strait of Hormuz have triggered a <span class="hl">polycrisis</span> connecting energy markets, fertilizer supply chains, and global food security in ways only now becoming clear. Oil prices have surged past <span class="hl">$105 per barrel</span>, but the bigger threat is the stranglehold on <span class="hl-gold">fertilizer flows</span> arriving right as the Northern Hemisphere spring planting season begins. Nearly a third of globally traded nitrogen fertilizer and roughly half of seaborne sulfur normally transit the Strait. Urea prices jumped <span class="hl">32% in a single week</span>. If this disruption extends through April, the cascading consequence falls hardest on corn -- the crop underpinning the entire modern food, fuel, and livestock system.</p>
   </div>
-
-  <!-- SECTION 1: OIL -->
   <div class="section">
     <div class="section-label">Section 01</div>
     <h2>The Oil Disruption: Immediate Shock, Structural Fragility</h2>
-
     <p>The Strait of Hormuz has long been recognized as the world's most critical energy chokepoint. <span class="hl">Nearly 20% of global seaborne oil trade</span> transits this narrow waterway, carrying crude from Saudi Arabia, Iraq, the UAE, Kuwait, and Qatar to energy-hungry markets in Asia and Europe [1]. When the U.S. and Israel launched Operation Epic Fury on February 28, 2026, Iran responded by effectively closing the strait. Within days, tanker traffic had dropped by over 70%, with more than 150 vessels anchored outside the Persian Gulf unable to secure war-risk insurance [2].</p>
-
-    <p>Brent crude surged from roughly $71 per barrel on February 27 to <span class="hl">$94 per barrel by March 9</span>, with prices climbing toward $105 by mid-March as market participants priced in the very real possibility of a prolonged closure [3]. The IEA took the extraordinary step of releasing 400 million barrels from strategic reserves -- a move that underscores the gravity of the situation. Saudi Arabia and the UAE have some ability to reroute exports via pipeline to Red Sea ports, but all other Gulf producers are almost entirely dependent on the strait [2]. For Japan, which gets roughly 70% of its Middle Eastern crude via Hormuz, the crisis is existential at the supply level [2].</p>
-
-    <div class="pull-quote">
-      <p>"Even with Iran's military degraded, it's easy for them to send a drone or two, drop a mine, or deliver a close-range missile."</p>
-      <cite>U.S. President Donald Trump, March 2026 [2]</cite>
-    </div>
-
-    <p>What makes this moment particularly precarious is that it lands on top of a structural oil-market dynamic that was already unstable. Throughout 2025, global oil markets swung between a glut scenario (supply outpacing demand by an estimated <span class="hl-gold">2.3 million barrels per day</span> for the year) and warnings from major producers that the underlying reserve replacement rate was dangerously low [4, 5]. Occidental CEO Vicki Hollub warned in early 2024 that the world had replaced less than 50% of the crude extracted over the prior decade, predicting a structural supply shortage by late 2025 [6]. That warning now looks prescient. Oil production capacity is concentrated in aging fields -- over 90% of upstream investment since 2019 has gone toward maintaining existing production, not expanding it [7].</p>
-
+    <p>Brent crude surged from roughly $71 per barrel on February 27 to <span class="hl">$94 per barrel by March 9</span>, with prices climbing toward $105 by mid-March [3]. The IEA took the extraordinary step of releasing 400 million barrels from strategic reserves. Saudi Arabia and the UAE have some ability to reroute exports via pipeline, but all other Gulf producers are almost entirely dependent on the strait [2].</p>
+    <div class="pull-quote"><p>"Even with Iran's military degraded, it's easy for them to send a drone or two, drop a mine, or deliver a close-range missile."</p><cite>U.S. President Donald Trump, March 2026 [2]</cite></div>
     <div class="stat-grid">
-      <div class="stat-card"><span class="big">70%</span><span class="label">Drop in tanker traffic through Hormuz</span></div>
-      <div class="stat-card"><span class="big">10Mb/d</span><span class="label">Gulf production shut-in by March 10</span></div>
-      <div class="stat-card"><span class="big">400Mb</span><span class="label">IEA strategic reserve release</span></div>
-      <div class="stat-card"><span class="big">84%</span><span class="label">Gulf crude destined for Asia in 2024</span></div>
+      <div class="stat-card"><span class="big">70%</span><span class="label">Drop in tanker traffic</span></div>
+      <div class="stat-card"><span class="big">10Mb/d</span><span class="label">Gulf production shut-in</span></div>
+      <div class="stat-card"><span class="big">400Mb</span><span class="label">IEA reserve release</span></div>
+      <div class="stat-card"><span class="big">84%</span><span class="label">Gulf crude to Asia in 2024</span></div>
     </div>
-
-    <div class="warning-box">
-      <h3>Geopolitical Risk Factor</h3>
-      <p>Even partial reopening of the strait does not resolve the crisis. War-risk insurance must be reinstated, and vessels require time to resume normal routes. Iran has signaled it may selectively allow non-Western shipping through, but drone attacks on Omani bypass ports at Duqm and Salalah have closed those alternative corridors as well [2]. The crisis is not simply military -- it is also logistical, legal, and financial.</p>
-    </div>
+    <figure class="report-image">
+      <img src="https://www.eia.gov/international/content/analysis/special_topics/World_Oil_Transit_Chokepoints/content/analysis/special_topics/World_Oil_Transit_Chokepoints/images/fig1.jpg" alt="EIA map of world oil transit chokepoints -- daily volumes in million barrels per day, first half 2025" onerror="this.style.display='none'" style="background:#fff;padding:12px;border-radius:4px;" />
+      <figcaption>World oil transit chokepoints by daily volume (million b/d), first half 2025. The Strait of Hormuz handled 20.9 mb/d -- one-fifth of global oil consumption. Source: U.S. Energy Information Administration, March 2026</figcaption>
+    </figure>
+    <div class="warning-box"><h3>Geopolitical Risk Factor</h3><p>Even partial reopening of the strait does not resolve the crisis. War-risk insurance must be reinstated, and vessels require time to resume normal routes. Iran has signaled selective willingness to allow non-Western shipping through, but drone attacks on Omani bypass ports at Duqm and Salalah have closed those alternative corridors as well [2].</p></div>
   </div>
-
-  <!-- SECTION 2: FERTILIZER -->
   <div class="section">
     <div class="section-label">Section 02</div>
     <h2>The Fertilizer Crisis: Oil's Hidden Cousin</h2>
-
-    <p>The global fertilizer crisis emerging from the Hormuz closure is in many ways more alarming than the oil price spike -- and far less covered. The reason is structural. Natural gas is the essential feedstock for nitrogen fertilizers. Ammonia synthesis -- the backbone of urea and most nitrogen products -- requires hydrogen derived from natural gas, combined under pressure with atmospheric nitrogen. When gas supplies are disrupted or prices spike, fertilizer plants shut down. <span class="hl">Fertilizer production in India, Bangladesh, and Pakistan has already been curtailed</span> because those countries cannot obtain LNG from Qatar -- which exports its gas through the same strait that is now closed [8].</p>
-
-    <p>The scale of the Hormuz dependency is staggering and almost never discussed in mainstream energy reporting. <span class="hl">Approximately one-third of all globally traded nitrogen fertilizer</span> and <span class="hl">nearly half of all globally traded sulfur</span> normally transit the strait [8, 9]. Sulfur, largely an oil and gas byproduct, is an essential ingredient in manufacturing phosphate fertilizers -- meaning that the closure is disrupting both nitrogen and phosphate supply chains simultaneously. Gulf producers including Qatar Fertiliser Company, Saudi Arabia's SABIC, and the UAE's Fertiglobe are among the world's largest fertilizer exporters, and their cargoes are now physically stranded [10].</p>
-
-    <div class="pull-quote">
-      <p>"Because fertilizer has less value than oil and gas, political and business leaders expend fewer resources to make sure it keeps flowing. A ship captain bold enough to brave drone strikes would prefer to carry oil."</p>
-      <cite>Carnegie Endowment for International Peace, March 2026 [8]</cite>
-    </div>
-
-    <p>The price signal is already extreme. Urea prices at the New Orleans import hub -- the U.S.'s key inland fertilizer benchmark -- jumped from <span class="hl">$516 per metric ton on February 27 to $683 on March 5</span>, a 32% increase in a single week [11]. Oxford Economics raised its Q2 2026 fertilizer price forecast by roughly 20%, with risks described as "skewed to the upside" [10]. One ton of urea now costs U.S. farmers the equivalent of <span class="hl-gold">126 bushels of corn</span>, up from 75 bushels just three months ago [11]. That ratio essentially means farmers must sell more crop just to afford the input that grows the next crop.</p>
-
+    <p>The global fertilizer crisis emerging from the Hormuz closure is in many ways more alarming than the oil price spike -- and far less covered. Natural gas is the essential feedstock for nitrogen fertilizers. Ammonia synthesis requires hydrogen derived from natural gas, combined under pressure with atmospheric nitrogen. When gas supplies are disrupted or prices spike, fertilizer plants shut down. <span class="hl">Fertilizer production in India, Bangladesh, and Pakistan has already been curtailed</span> because those countries cannot obtain LNG from Qatar [8].</p>
+    <p><span class="hl">Approximately one-third of all globally traded nitrogen fertilizer</span> and <span class="hl">nearly half of all globally traded sulfur</span> normally transit the strait [8, 9]. Gulf producers including Qatar Fertiliser Company, Saudi Arabia's SABIC, and the UAE's Fertiglobe are among the world's largest fertilizer exporters, and their cargoes are now physically stranded [10].</p>
+    <div class="pull-quote"><p>"Because fertilizer has less value than oil and gas, political and business leaders expend fewer resources to make sure it keeps flowing. A ship captain bold enough to brave drone strikes would prefer to carry oil."</p><cite>Carnegie Endowment for International Peace, March 2026 [8]</cite></div>
+    <figure class="report-image">
+      <img src="https://www.ers.usda.gov/webdocs/charts/106487/fertilizer_price_2022_2025.png?v=5938" alt="USDA ERS fertilizer price chart 2022-2025" onerror="this.style.display='none'" style="background:#fff;padding:12px;border-radius:4px;" />
+      <figcaption>Fertilizer prices surged to historic highs in 2022 following Russia's invasion of Ukraine, then partially subsided -- but the 2026 Hormuz closure is driving a new spike. Source: USDA Economic Research Service</figcaption>
+    </figure>
+    <p>Urea prices at the New Orleans import hub jumped from <span class="hl">$516 per metric ton on February 27 to $683 on March 5</span>, a 32% increase in a single week [11]. One ton of urea now costs U.S. farmers the equivalent of <span class="hl-gold">126 bushels of corn</span>, up from 75 bushels three months ago [11].</p>
     <div class="highlight-box">
-      <h3>Why the 2026 Fertilizer Crisis Differs from 2022</h3>
+      <h3>Why the 2026 Crisis Differs from 2022</h3>
       <ul>
-        <li><strong>Timing is worse.</strong> The strait closed right before the Northern Hemisphere spring planting window. Fertilizer delayed now misses the season entirely.</li>
-        <li><strong>No emergency rerouting.</strong> Saudi Arabia's Red Sea pipeline is for oil, not ammonia. There is no alternative fertilizer export corridor.</li>
-        <li><strong>No strategic reserves.</strong> G7 countries maintain oil stockpiles but have no strategic fertilizer reserves to release [8].</li>
+        <li><strong>Timing is worse.</strong> The strait closed right before the Northern Hemisphere spring planting window.</li>
+        <li><strong>No emergency rerouting.</strong> Saudi Arabia's Red Sea pipeline is for oil, not ammonia.</li>
+        <li><strong>No strategic reserves.</strong> G7 countries maintain oil stockpiles but have no strategic fertilizer reserves [8].</li>
         <li><strong>Second-order shutdowns.</strong> Producers in India, Pakistan, and Egypt that depend on Gulf gas are also curtailing output [8].</li>
-        <li><strong>China restricting exports.</strong> China, the world's largest fertilizer producer, responded to the crisis by tightening export controls on urea and nitrogen-potassium blends -- exactly the opposite of what the world needs [9].</li>
+        <li><strong>China restricting exports.</strong> China tightened fertilizer export controls in response to the crisis [9].</li>
       </ul>
     </div>
-
-    <p>The historical parallel most analysts reach for is Sri Lanka in 2021-2022. When Sri Lanka banned synthetic fertilizers, domestic agriculture collapsed within a season, rice production fell by 20%, food prices doubled, and the government fell [8]. Sri Lanka's example is instructive not as a prediction of what will happen everywhere, but as a demonstration of the speed with which the fertilizer-to-food-price link can tighten when supply is abruptly removed. The 2022 Russia-Ukraine crisis produced a global fertilizer shock -- but that crisis unfolded over months and allowed for partial supply rerouting. The Hormuz closure is faster and hits a narrower geographic bottleneck with no bypass.</p>
-
     <div class="chart-wrapper">
       <h3>Fertilizer Trade Exposure Through Strait of Hormuz</h3>
       <svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg">
-        <!-- background -->
         <rect width="680" height="220" fill="#111" rx="4"/>
-        <!-- bars -->
-        <!-- Seaborne Urea: 43% -->
         <rect x="60" y="30" width="258" height="36" fill="#8b0000" rx="3"/>
-        <text x="55" y="53" fill="#aaa" font-size="12" text-anchor="end" font-family="Helvetica Neue, Arial, sans-serif">Seaborne Urea</text>
-        <text x="330" y="53" fill="#ff6666" font-size="13" font-weight="bold" font-family="Helvetica Neue, Arial, sans-serif">43%</text>
-
-        <!-- Sulfur Exports: 44% -->
+        <text x="55" y="53" fill="#aaa" font-size="12" text-anchor="end" font-family="Arial,sans-serif">Seaborne Urea</text>
+        <text x="330" y="53" fill="#ff6666" font-size="13" font-weight="bold" font-family="Arial,sans-serif">43%</text>
         <rect x="60" y="82" width="264" height="36" fill="#7a0000" rx="3"/>
-        <text x="55" y="105" fill="#aaa" font-size="12" text-anchor="end" font-family="Helvetica Neue, Arial, sans-serif">Sulfur Exports</text>
-        <text x="336" y="105" fill="#ff6666" font-size="13" font-weight="bold" font-family="Helvetica Neue, Arial, sans-serif">44%</text>
-
-        <!-- Ammonia: 25% -->
+        <text x="55" y="105" fill="#aaa" font-size="12" text-anchor="end" font-family="Arial,sans-serif">Sulfur Exports</text>
+        <text x="336" y="105" fill="#ff6666" font-size="13" font-weight="bold" font-family="Arial,sans-serif">44%</text>
         <rect x="60" y="134" width="150" height="36" fill="#600000" rx="3"/>
-        <text x="55" y="157" fill="#aaa" font-size="12" text-anchor="end" font-family="Helvetica Neue, Arial, sans-serif">Ammonia</text>
-        <text x="222" y="157" fill="#ff6666" font-size="13" font-weight="bold" font-family="Helvetica Neue, Arial, sans-serif">25%</text>
-
-        <!-- Nitrogen Fert: 33% -->
+        <text x="55" y="157" fill="#aaa" font-size="12" text-anchor="end" font-family="Arial,sans-serif">Ammonia</text>
+        <text x="222" y="157" fill="#ff6666" font-size="13" font-weight="bold" font-family="Arial,sans-serif">25%</text>
         <rect x="60" y="186" width="198" height="20" fill="#500000" rx="3"/>
-        <text x="55" y="201" fill="#aaa" font-size="12" text-anchor="end" font-family="Helvetica Neue, Arial, sans-serif">Nitrogen Total</text>
-        <text x="270" y="201" fill="#ff6666" font-size="13" font-weight="bold" font-family="Helvetica Neue, Arial, sans-serif">33%</text>
-
-        <!-- axis label -->
-        <text x="60" y="218" fill="#555" font-size="10" font-family="Helvetica Neue, Arial, sans-serif">0%</text>
-        <text x="390" y="218" fill="#555" font-size="10" font-family="Helvetica Neue, Arial, sans-serif">60%</text>
-        <text x="60" y="218" fill="#555" font-size="10" font-family="Helvetica Neue, Arial, sans-serif"></text>
-        <text x="390" y="12" fill="#777" font-size="11" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif">Share of Global Seaborne Trade Blocked by Strait Closure</text>
+        <text x="55" y="201" fill="#aaa" font-size="12" text-anchor="end" font-family="Arial,sans-serif">Nitrogen Total</text>
+        <text x="270" y="201" fill="#ff6666" font-size="13" font-weight="bold" font-family="Arial,sans-serif">33%</text>
+        <text x="390" y="12" fill="#777" font-size="11" text-anchor="middle" font-family="Arial,sans-serif">Share of Global Seaborne Trade Blocked by Strait Closure</text>
       </svg>
     </div>
   </div>
-
-  <!-- SECTION 3: CORN -->
   <div class="section">
     <div class="section-label">Section 03</div>
     <h2>Corn: The Linchpin Crop No One Thinks About Until It's Gone</h2>
-
-    <p>Corn -- or maize -- is not primarily a food for most Americans. That is the crucial misconception. Of the roughly 15-17 billion bushels produced annually in the United States (a record was set in 2025 at 16.8 billion bushels on 98.7 million acres), <span class="hl">roughly 40% goes to ethanol production</span> and another 36-40% goes to livestock feed [12, 13]. Only a small fraction reaches humans directly, mostly as high-fructose corn syrup, corn starch, and corn-based processed food ingredients. Yet when corn supply tightens or corn prices spike, the consequences ripple through virtually every other food category -- because everything downstream depends on it.</p>
-
-    <p>The fertilizer connection is direct and critical. Corn is one of the most nitrogen-intensive crops grown at scale. Fertilizers account for roughly <span class="hl-gold">36% of a corn farmer's operating costs</span> [13]. When nitrogen prices surge 30% or more, as they have in March 2026, farmers face a stark choice: absorb the cost, reduce application rates (and accept lower yields), switch to less nitrogen-intensive crops, or not plant at all. Researchers already note that farmers may shift away from corn to crops like soybeans -- which fix their own nitrogen -- if input costs remain elevated through the planting window [11].</p>
-
+    <p>Corn is not primarily a food for most Americans. Of the roughly 15-17 billion bushels produced annually in the U.S. (a record 16.8 billion in 2025), <span class="hl">roughly 40% goes to ethanol</span> and another 36-40% goes to livestock feed [12, 13]. Fertilizers account for roughly <span class="hl-gold">36% of a corn farmer's operating costs</span> [13]. When nitrogen prices surge 30% or more, as in March 2026, farmers face a stark choice: absorb the cost, reduce application rates, switch crops, or not plant at all [11].</p>
     <div class="highlight-box">
       <h3>The Corn Dependency Chain -- What Breaks When Corn Falters</h3>
       <ul>
-        <li><strong>Livestock &amp; meat.</strong> Roughly 36-40% of U.S. corn feeds cattle, hogs, and poultry. Feed costs represent 65-75% of poultry production expenses. A corn price spike directly translates to more expensive beef, pork, chicken, eggs, and dairy [14].</li>
-        <li><strong>Ethanol &amp; fuel.</strong> About 40% of U.S. corn goes to ethanol. Reduced corn supply tightens ethanol margins and can affect gasoline blend economics, compounding the oil-price hit already underway [12].</li>
-        <li><strong>Processed food.</strong> High-fructose corn syrup, corn starch, corn oil, citric acid, dextrose, and dozens of other corn derivatives appear in an enormous share of packaged and processed foods. Any significant corn shortage raises input costs across the entire processed food industry [14].</li>
-        <li><strong>Pharmaceuticals &amp; industrial inputs.</strong> Corn-derived glucose and fermentation substrates are used in pharmaceutical manufacturing. Corn starch is used in paper, textiles, adhesives, and biodegradable plastics [13].</li>
-        <li><strong>Export markets.</strong> The U.S. accounts for roughly 36% of global corn exports. Countries including Mexico, Japan, South Korea, Colombia, and several African nations depend on U.S. corn for food security [13].</li>
+        <li><strong>Livestock &amp; meat.</strong> 36-40% of U.S. corn feeds cattle, hogs, and poultry. Feed costs = 65-75% of poultry production expenses [14].</li>
+        <li><strong>Ethanol &amp; fuel.</strong> ~40% of U.S. corn goes to ethanol. Reduced corn supply tightens ethanol margins [12].</li>
+        <li><strong>Processed food.</strong> HFCS, corn starch, corn oil, citric acid, dextrose appear in an enormous share of packaged foods [14].</li>
+        <li><strong>Pharmaceuticals &amp; industrial.</strong> Corn-derived glucose is used in pharmaceutical manufacturing. Corn starch in paper, textiles, adhesives [13].</li>
+        <li><strong>Export markets.</strong> The U.S. accounts for ~36% of global corn exports. Mexico, Japan, South Korea, Colombia depend on it [13].</li>
       </ul>
     </div>
-
-    <p>The caloric math tells a stark story. An average Iowa cornfield has the theoretical potential to deliver more than <span class="hl">15 million calories per acre per year</span>. But because so much corn is routed through ethanol and animal feed -- both of which are inefficient caloric converters -- the system delivers only about <span class="hl-gold">3 million calories of food per acre</span>. A single cow consumes a staggering amount of corn to produce a pound of beef, and only about one-third of the calories fed to livestock ultimately reach human consumption [15]. This inefficiency means that even a modest reduction in corn output creates outsized stress on the human food supply, because the margin is already thin.</p>
-
-    <div class="pull-quote">
-      <p>"Without strategically prioritizing the delivery of critical farm inputs such as urea, ammonia, nitrogen, phosphate, and sulfur, the U.S. risks a shortfall in crops. This is a threat to our food security -- and by extension our national security."</p>
-      <cite>American Farm Bureau Federation, letter to Trump Administration, March 2026 [11]</cite>
-    </div>
-
-    <p>Right now, U.S. corn is actually in a surplus position -- 2025 was a record harvest year with roughly 2 billion bushels in ending stocks [16]. That buffer provides some insulation for the spring 2026 planting season. But it does not eliminate the risk. If fertilizer prices stay elevated through April, planting decisions shift. Reduced nitrogen application rates show up as yield declines six months later. And for the global farmers who do not enjoy the same cushion -- Brazil imports over <span class="hl">80% of its fertilizers</span> and relies heavily on Gulf supply; India is facing shutdowns in its own fertilizer production -- the consequences of the current disruption will appear in harvest data by late 2026 and into 2027 [9].</p>
+    <figure class="report-image">
+      <img src="https://www.ers.usda.gov/webdocs/charts/58346/cornuse.png?v=6734" alt="U.S. corn use breakdown by ethanol, feed, food and exports" onerror="this.style.display='none'" style="background:#fff;padding:12px;border-radius:4px;" />
+      <figcaption>U.S. corn use breakdown: ethanol and animal feed consume roughly 80% of the crop. Direct human food is a small fraction. Source: USDA Economic Research Service</figcaption>
+    </figure>
+    <p>An average Iowa cornfield has the potential to deliver more than <span class="hl">15 million calories per acre per year</span>. But because so much corn flows through ethanol and animal feed, the system delivers only about <span class="hl-gold">3 million food calories per acre</span> -- lower than farms in Bangladesh, Egypt, and Vietnam [15]. This means even a modest reduction in corn output creates outsized stress on the human food supply.</p>
+    <div class="pull-quote"><p>"Without strategically prioritizing delivery of critical farm inputs such as urea, ammonia, nitrogen, phosphate, and sulfur, the U.S. risks a shortfall in crops. This is a threat to our food security -- and national security."</p><cite>American Farm Bureau Federation, letter to Trump Administration, March 2026 [11]</cite></div>
   </div>
-
-  <!-- SECTION 4: CASCADING FOOD SYSTEM -->
   <div class="section">
     <div class="section-label">Section 04</div>
     <h2>The Cascade: From Wellhead to Grocery Aisle</h2>
-
-    <p>The chain of consequences from oil disruption to food prices is not linear -- it is multiplicative. Oil prices affect diesel costs for farm equipment and freight. High diesel means more expensive planting, harvesting, and distribution. It also means higher feedstock costs for nitrogen fertilizer. Higher fertilizer costs suppress corn planting. Lower corn supply tightens the livestock feed market. Higher feed costs raise meat, dairy, and egg prices. Simultaneously, higher diesel raises the cost of transporting every other food product. The result is a broad-based food inflation shock that arrives at the grocery store in waves -- fuel costs almost immediately, fertilizer impacts in the first and second harvests after disruption, and livestock and processed food impacts within six to twelve months of a sustained corn supply shock [17].</p>
-
-    <p>As of March 2026, all of these mechanisms are in motion simultaneously. Brent crude above $105 per barrel is already driving diesel above $5 per gallon in much of the U.S. [2]. Freight costs have climbed an estimated <span class="hl">20% since February</span>, creating regional disruptions in the livestock supply chain as the cost of moving cattle to distant processing plants becomes economically prohibitive [18]. The USDA has noted a spike in "panic culling" -- ranchers liquidating herds early rather than paying escalating feed costs -- which creates a short-term meat price depression followed by a medium-term scarcity as herd sizes shrink [18]. The U.S. cattle herd was already at a <span class="hl-gold">75-year low</span> entering 2026, meaning there is little slack in the system to absorb another shock [18].</p>
-
+    <p>The chain of consequences from oil disruption to food prices is multiplicative. Oil prices affect diesel costs for farm equipment and freight. High diesel means more expensive planting and distribution. It also raises feedstock costs for nitrogen fertilizer. Higher fertilizer costs suppress corn planting. Lower corn supply tightens livestock feed markets. Higher feed costs raise meat, dairy, and egg prices. The result is a broad-based food inflation shock that arrives in waves [17].</p>
+    <p>As of March 2026, all these mechanisms are in motion simultaneously. Brent above $105 per barrel drives diesel above $5 per gallon [2]. Freight costs have climbed an estimated <span class="hl">20% since February</span> [18]. The U.S. cattle herd was already at a <span class="hl-gold">75-year low</span> entering 2026 [18].</p>
     <div class="timeline">
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <div class="tl-date">Feb 28, 2026</div>
-          <p>Operation Epic Fury launched. Iran retaliates, closes Strait of Hormuz. Tanker traffic drops 70%+ within days.</p>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <div class="tl-date">Early March 2026</div>
-          <p>Brent crude spikes to $94/bbl. Urea prices jump 32% in one week. 150+ tankers anchor outside Persian Gulf. China tightens fertilizer export controls.</p>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <div class="tl-date">Mid-March 2026</div>
-          <p>Brent reaches ~$105/bbl. IEA releases 400 million barrels from strategic reserves. Fertilizer plants in India, Pakistan, Bangladesh curtail production. Diesel crosses $5/gal in the U.S. FAO issues global food security alert.</p>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <div class="tl-date">April 2026 (Projected)</div>
-          <p>Northern Hemisphere spring planting window opens. Farmers face fertilizer shortfalls and high input costs. Crop mix decisions -- potentially less corn, more soybeans -- begin reshaping 2026 harvest expectations.</p>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <div class="tl-date">H2 2026 -- 2027 (Risk Window)</div>
-          <p>Harvest data from reduced-input planting begins to appear. Global grain export volumes tighten. Livestock herd rebuilding stalls. Food inflation hits second and third waves across processed foods, meat, and dairy.</p>
-        </div>
-      </div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><div class="tl-date">Feb 28, 2026</div><p>Operation Epic Fury launched. Iran closes Strait of Hormuz. Tanker traffic drops 70%+.</p></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><div class="tl-date">Early March 2026</div><p>Brent spikes to $94/bbl. Urea prices jump 32% in one week. 150+ tankers anchor outside Persian Gulf. China tightens fertilizer export controls.</p></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><div class="tl-date">Mid-March 2026</div><p>Brent reaches ~$105/bbl. IEA releases 400 million barrels. Fertilizer plants in India, Pakistan, Bangladesh curtail production. FAO issues global food security alert.</p></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><div class="tl-date">April 2026 (Projected)</div><p>Northern Hemisphere spring planting window opens. Farmers face fertilizer shortfalls and high input costs.</p></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><div class="tl-date">H2 2026 -- 2027 (Risk Window)</div><p>Harvest data from reduced-input planting begins to appear. Food inflation hits second and third waves.</p></div></div>
     </div>
-
-    <p>Beyond food prices, the geopolitical dimension of food insecurity is well-documented. The 2022 fertilizer and grain shock -- driven by Russia's invasion of Ukraine -- contributed to food price spikes that hit developing nations in sub-Saharan Africa, South Asia, and the Middle East disproportionately hard [17]. <span class="hl">Over 2.3 billion people worldwide already faced moderate or severe food insecurity as of 2023</span> -- a 45% increase from 2015 levels [17]. Countries like Yemen, where 17 million people were already approaching catastrophic food insecurity levels before this crisis, are now facing a double shock of supply chain disruption and elevated prices [10]. Lebanon, whose 2022-era food crisis never fully resolved, is facing a potential escalation affecting nearly a million people [10].</p>
-
-    <div class="warning-box">
-      <h3>What the World Bank and FAO Are Watching</h3>
-      <p>The FAO has warned explicitly that a prolonged Strait of Hormuz closure could place over 100 million people at risk of a humanitarian food catastrophe. The World Bank has previously modeled that high fertilizer prices in 2023 could lead to 1 million additional deaths from undernourishment. The 2026 disruption is happening faster, at a more critical planting moment, and with fewer strategic reserves available than in 2022 [10, 17].</p>
-    </div>
+    <div class="warning-box"><h3>What the World Bank and FAO Are Watching</h3><p>The FAO warned a prolonged Hormuz closure could place over 100 million people at risk of humanitarian food catastrophe. The World Bank previously modeled that high fertilizer prices in 2023 could lead to 1 million additional deaths from undernourishment [10, 17].</p></div>
   </div>
-
-  <!-- SECTION 5: OUTLOOK -->
   <div class="section">
     <div class="section-label">Section 05</div>
     <h2>Outlook and Strategic Implications</h2>
-
-    <p>The immediate question is whether the Strait of Hormuz reopens -- and how quickly. Iran has shown selective willingness to allow non-Western shipping through, and negotiations via Turkey and Iraq have produced some movement [2]. But the physical and insurance infrastructure required for normal shipping volumes to resume could take weeks even after a ceasefire or political agreement. Damage to bypass ports at Duqm and Salalah further limits alternatives. The spring planting window does not pause for geopolitics -- every day of delay past early April reduces the fertilizer available to farmers in the critical growing window.</p>
-
-    <p>The medium-term structural picture is also concerning. Oil investment has been declining in real terms for years. Saxo Bank and the EIA both project flat-to-declining U.S. shale output in 2026 if prices fall below $60 per barrel -- the irony being that a glut-driven price collapse could reduce the investment that prevents a shortage later this decade [4]. On fertilizer, the 2026 crisis is accelerating a conversation about strategic reserves and supply chain resilience that policymakers have deferred for decades. G7 governments maintain oil stockpiles but have no comparable fertilizer reserve mechanism. A single 30-day Hormuz closure, according to the U.N. Trade and Development Agency, can be enough to have a devastating impact on the food supply -- and the current disruption is already in its third week [9].</p>
-
-    <p>For the U.S. specifically, the picture is mixed but not dire in the short term. America produces roughly three-quarters of the fertilizer it consumes, and nitrogen producers like CF Industries have seen their stocks surge as domestic supply becomes more valuable [11]. U.S. corn ending stocks from the record 2025 harvest provide a meaningful buffer. But the interconnectedness of global food commodity markets means that international supply disruptions still ripple into domestic prices and export competitiveness. The American Farm Bureau Federation has already written to the White House urging that critical farm inputs be treated as a national security priority -- not just an agricultural market issue [11].</p>
-
+    <p>The immediate question is whether the Strait of Hormuz reopens -- and how quickly. Iran has shown selective willingness to allow non-Western shipping through. But the physical and insurance infrastructure required for normal shipping volumes could take weeks to restore even after a political agreement. The spring planting window does not pause for geopolitics [2].</p>
+    <p>For the U.S., the picture is mixed but not dire in the short term. America produces roughly three-quarters of the fertilizer it consumes, and U.S. corn ending stocks from the record 2025 harvest provide a meaningful buffer. But for Brazil, which imports over <span class="hl">80% of its fertilizers</span>, and for India facing production curtailments, the consequences will appear in harvest data by late 2026 and into 2027 [9].</p>
     <div class="highlight-box">
       <h3>Key Signals to Watch</h3>
       <ul>
-        <li><strong>Strait reopening timeline.</strong> Every additional week of closure increases the probability that the 2026 corn and wheat planting season in the Northern Hemisphere is materially impacted.</li>
-        <li><strong>China fertilizer export policy.</strong> A reversal of Beijing's export restrictions would meaningfully ease global supply. The current tightening is a compounding factor.</li>
-        <li><strong>U.S. corn planting data.</strong> USDA planting intention reports in late March and April will signal how farmers are responding to elevated input costs.</li>
-        <li><strong>South American harvest.</strong> Brazil and Argentina are in the late stages of their harvest cycle. Any shortfall there removes a key supply buffer for global corn markets.</li>
-        <li><strong>War-risk insurance reinstatement.</strong> Commercial shipping cannot normalize even after military de-escalation until insurers reinstate coverage for the region.</li>
-        <li><strong>India monsoon planting risk.</strong> With Indian urea production curtailed, the monsoon season planting (June-September) for rice and wheat is now at elevated risk.</li>
+        <li><strong>Strait reopening timeline.</strong> Every additional week of closure increases probability of 2026 planting season damage.</li>
+        <li><strong>China fertilizer export policy.</strong> A reversal of Beijing's export restrictions would meaningfully ease global supply.</li>
+        <li><strong>U.S. corn planting data.</strong> USDA planting intention reports in late March and April signal farmer response to high input costs.</li>
+        <li><strong>South American harvest.</strong> Any shortfall in Brazil or Argentina removes a key global corn supply buffer.</li>
+        <li><strong>War-risk insurance reinstatement.</strong> Shipping cannot normalize until insurers reinstate coverage for the region.</li>
+        <li><strong>India monsoon planting risk.</strong> With Indian urea production curtailed, monsoon season planting (June-September) is at elevated risk.</li>
       </ul>
     </div>
-
-    <p>The longer structural lesson here is one that food systems researchers have been raising for years: the global food supply chain is optimized for efficiency, not resilience. The nitrogen fertilizer system is simultaneously dependent on natural gas (an energy commodity), maritime shipping (a logistics system), and geopolitical stability (a foreign policy variable) -- all three of which are now under stress at the same time. Without strategic fertilizer reserves, without production diversification away from politically volatile regions, and without a rethink of the corn system's extraordinary concentration of risk across feed, fuel, and food, the next crisis will find the same vulnerabilities in the same places.</p>
-  </div>
-
-</div>
-
-<!-- REFERENCES -->
-<div class="references">
-  <div class="container">
-    <h2>Sources &amp; References</h2>
-    <ol class="ref-list">
-      <li>[1] <a href="https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis" target="_blank">2026 Strait of Hormuz Crisis -- Wikipedia</a></li>
-      <li>[2] <a href="https://www.cnbc.com/2026/03/11/strait-of-hormuz-closure-shipping-economy-oil.html" target="_blank">How Strait of Hormuz Closure Can Become Tipping Point for Global Economy -- CNBC, March 2026</a></li>
-      <li>[3] <a href="https://www.eia.gov/outlooks/steo/report/global_oil.php" target="_blank">Short Term Energy Outlook: Global Liquid Fuels -- U.S. Energy Information Administration, March 2026</a></li>
-      <li>[4] <a href="https://fortworthinc.com/commentary/oil%E2%80%99s-coming-glut-may-be-setting-up-the-next-supply-shock/" target="_blank">Oil Glut in 2026 May Trigger Future Supply Shortage -- Fort Worth Inc., December 2025</a></li>
-      <li>[5] <a href="https://blogs.worldbank.org/en/opendata/oil-market-glut--surging-output-and-sluggish-demand-pressure-pri" target="_blank">Oil Market Glut: Rising Supply and Slowing Demand -- World Bank, November 2025</a></li>
-      <li>[6] <a href="https://www.cnbc.com/2024/02/05/oil-market-will-face-supply-shortage-by-end-of-2025-occidental-ceo-says.html" target="_blank">Oil Market Will Face Supply Shortage by End of 2025, Occidental CEO Says -- CNBC, February 2024</a></li>
-      <li>[7] <a href="https://earth-investment.com/en/insight/the-hidden-crisis-why-the-world-is-heading-for-an-oil-gap/" target="_blank">The Hidden Crisis: Why the World is Heading for an Oil Gap -- Earth Resource Investments, October 2025</a></li>
-      <li>[8] <a href="https://carnegieendowment.org/emissary/2026/03/fertilizer-iran-hormuz-food-crisis" target="_blank">Fertilizer Isn't Getting Through the Strait of Hormuz -- Carnegie Endowment, March 2026</a></li>
-      <li>[9] <a href="https://www.capts-ndsu.com/post/breaking-down-the-march-2026-ndsu-agricultural-trade-monitor-the-strait-of-hormuz-closure-and-globa" target="_blank">NDSU Agricultural Trade Monitor, March 2026 -- North Dakota State University</a></li>
-      <li>[10] <a href="https://www.thenationalnews.com/business/economy/2026/03/12/global-fertiliser-supply-at-risk-amid-strait-of-hormuz-blockade/" target="_blank">Global Fertiliser Supply at Risk Amid Strait of Hormuz Blockade -- The National, March 2026</a></li>
-      <li>[11] <a href="https://www.foodingredientsfirst.com/news/hormuz-fertilizer-crisis-food-ingredient-costs.html" target="_blank">Iran's Hormuz Blockade Leaves Fertilizer Stranded as Food Price Inflation Nears -- Food Ingredients First, March 2026</a></li>
-      <li>[12] <a href="https://www.scientificamerican.com/article/time-to-rethink-corn/" target="_blank">It's Time to Rethink America's Corn System -- Scientific American</a></li>
-      <li>[13] <a href="https://www.fairr.org/news-events/insights/the-united-states-corn-undrum" target="_blank">The United States Corn-undrum -- FAIRR, March 2024</a></li>
-      <li>[14] <a href="https://gardenhypes.com/2025/07/14/corn-shortage/" target="_blank">Global Corn Shortage Causes and Impact -- GardenHypes, July 2025</a></li>
-      <li>[15] <a href="https://www.worldbank.org/en/news/podcast/2022/07/22/fertilizer-volatility-and-the-food-crisis" target="_blank">Fertilizer Volatility and the Food Crisis -- World Bank Podcast, 2022</a></li>
-      <li>[16] <a href="https://tcbmag.com/we-have-a-corn-problem-how-do-we-solve-it/" target="_blank">Houston, We Have a Corn Problem -- Twin Cities Business, February 2026</a></li>
-      <li>[17] <a href="https://www.visualcapitalist.com/sp/visualized-the-global-implications-of-fertilizer-shortages/" target="_blank">Visualized: The Global Implications of Fertilizer Shortages -- Visual Capitalist, 2023</a></li>
-      <li>[18] <a href="https://markets.financialcontent.com/stocks/article/marketminute-2026-3-18-the-protein-paradox-why-livestock-prices-are-sagging-as-grains-reach-new-heights" target="_blank">The Protein Paradox: Livestock vs. Grain Prices -- FinancialContent, March 18, 2026</a></li>
-    </ol>
+    <p>The longer structural lesson is one that food systems researchers have been raising for years: the global food supply chain is optimized for efficiency, not resilience. The nitrogen fertilizer system is simultaneously dependent on natural gas, maritime shipping, and geopolitical stability -- all three of which are now under stress at the same time. Without strategic fertilizer reserves, without production diversification away from politically volatile regions, and without a rethink of the corn system's extraordinary concentration of risk, the next crisis will find the same vulnerabilities in the same places.</p>
   </div>
 </div>
-
-<footer>Intelligence Report | March 18, 2026 | 18 Sources | Signal Over Noise AI</footer>
-
+<div class="references"><div class="container">
+  <h2>Sources &amp; References</h2>
+  <ol class="ref-list">
+    <li>[1] <a href="https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis" target="_blank">2026 Strait of Hormuz Crisis -- Wikipedia</a></li>
+    <li>[2] <a href="https://www.cnbc.com/2026/03/11/strait-of-hormuz-closure-shipping-economy-oil.html" target="_blank">How Strait of Hormuz Closure Can Become Tipping Point -- CNBC, March 2026</a></li>
+    <li>[3] <a href="https://www.eia.gov/outlooks/steo/report/global_oil.php" target="_blank">Short Term Energy Outlook -- U.S. EIA, March 2026</a></li>
+    <li>[4] <a href="https://fortworthinc.com/commentary/oil-s-coming-glut-may-be-setting-up-the-next-supply-shock/" target="_blank">Oil Glut in 2026 May Trigger Future Supply Shortage -- Fort Worth Inc., December 2025</a></li>
+    <li>[5] <a href="https://blogs.worldbank.org/en/opendata/oil-market-glut--surging-output-and-sluggish-demand-pressure-pri" target="_blank">Oil Market Glut -- World Bank, November 2025</a></li>
+    <li>[6] <a href="https://www.cnbc.com/2024/02/05/oil-market-will-face-supply-shortage-by-end-of-2025-occidental-ceo-says.html" target="_blank">Oil Market Will Face Supply Shortage by End of 2025 -- CNBC, February 2024</a></li>
+    <li>[7] <a href="https://earth-investment.com/en/insight/the-hidden-crisis-why-the-world-is-heading-for-an-oil-gap/" target="_blank">The Hidden Crisis: Why the World is Heading for an Oil Gap -- Earth Resource Investments, October 2025</a></li>
+    <li>[8] <a href="https://carnegieendowment.org/emissary/2026/03/fertilizer-iran-hormuz-food-crisis" target="_blank">Fertilizer Isn't Getting Through the Strait of Hormuz -- Carnegie Endowment, March 2026</a></li>
+    <li>[9] <a href="https://www.capts-ndsu.com/post/breaking-down-the-march-2026-ndsu-agricultural-trade-monitor-the-strait-of-hormuz-closure-and-globa" target="_blank">NDSU Agricultural Trade Monitor, March 2026</a></li>
+    <li>[10] <a href="https://www.thenationalnews.com/business/economy/2026/03/12/global-fertiliser-supply-at-risk-amid-strait-of-hormuz-blockade/" target="_blank">Global Fertiliser Supply at Risk -- The National, March 2026</a></li>
+    <li>[11] <a href="https://www.foodingredientsfirst.com/news/hormuz-fertilizer-crisis-food-ingredient-costs.html" target="_blank">Iran's Hormuz Blockade Leaves Fertilizer Stranded -- Food Ingredients First, March 2026</a></li>
+    <li>[12] <a href="https://www.scientificamerican.com/article/time-to-rethink-corn/" target="_blank">It's Time to Rethink America's Corn System -- Scientific American</a></li>
+    <li>[13] <a href="https://www.fairr.org/news-events/insights/the-united-states-corn-undrum" target="_blank">The United States Corn-undrum -- FAIRR, March 2024</a></li>
+    <li>[14] <a href="https://gardenhypes.com/2025/07/14/corn-shortage/" target="_blank">Global Corn Shortage Causes and Impact -- GardenHypes, July 2025</a></li>
+    <li>[15] <a href="https://www.scientificamerican.com/article/time-to-rethink-corn/" target="_blank">Corn Caloric Efficiency -- Scientific American</a></li>
+    <li>[16] <a href="https://tcbmag.com/we-have-a-corn-problem-how-do-we-solve-it/" target="_blank">Houston, We Have a Corn Problem -- Twin Cities Business, February 2026</a></li>
+    <li>[17] <a href="https://www.visualcapitalist.com/sp/visualized-the-global-implications-of-fertilizer-shortages/" target="_blank">The Global Implications of Fertilizer Shortages -- Visual Capitalist, 2023</a></li>
+    <li>[18] <a href="https://markets.financialcontent.com/stocks/article/marketminute-2026-3-18-the-protein-paradox-why-livestock-prices-are-sagging-as-grains-reach-new-heights" target="_blank">The Protein Paradox -- FinancialContent, March 18, 2026</a></li>
+  </ol>
+</div></div>
+<footer>Intelligence Report | March 19, 2026 | 18 Sources | Signal Over Noise AI</footer>
 </body>
 </html>
